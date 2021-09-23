@@ -1,0 +1,134 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Projects\\VSProjects\\JadeDynastySimulator\\JadeDynastySimulator.csproj": {}
+  },
+  "projects": {
+    "E:\\Projects\\VSProjects\\JadeDynastySimulator\\JadeDynastySimulator.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\VSProjects\\JadeDynastySimulator\\JadeDynastySimulator.csproj",
+        "projectName": "JadeDynastySimulator",
+        "projectPath": "E:\\Projects\\VSProjects\\JadeDynastySimulator\\JadeDynastySimulator.csproj",
+        "packagesPath": "X:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\VSProjects\\JadeDynastySimulator\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "X:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "x:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "x:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "X:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "E:\\Projects\\VSProjects\\NetWorkLibrary\\NetWorkLibrary\\NetWorkLibrary.csproj": {
+                "projectPath": "E:\\Projects\\VSProjects\\NetWorkLibrary\\NetWorkLibrary\\NetWorkLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.26, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "X:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Projects\\VSProjects\\NetWorkLibrary\\NetWorkLibrary\\NetWorkLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\VSProjects\\NetWorkLibrary\\NetWorkLibrary\\NetWorkLibrary.csproj",
+        "projectName": "NetWorkLibrary",
+        "projectPath": "E:\\Projects\\VSProjects\\NetWorkLibrary\\NetWorkLibrary\\NetWorkLibrary.csproj",
+        "packagesPath": "X:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\VSProjects\\NetWorkLibrary\\NetWorkLibrary\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "X:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "x:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "x:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "X:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "X:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
