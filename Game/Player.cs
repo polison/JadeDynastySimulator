@@ -27,7 +27,7 @@ namespace JadeDynastySimulator
             Player player = null;
             var _accountid = reader.ReadUInt32(false);
             reader.ReadBytes(4);
-            var index = reader.ReadInt32() + 1;
+            var index = reader.ReadInt32(false) + 1;
 
             var packer = new ByteBuffer();
             var character = new WorldPacket((int)SocketOpcode.SMSG_ROLELIST, packer);
@@ -58,7 +58,7 @@ namespace JadeDynastySimulator
         private void Initailize(int index, TypedDataRow row)
         {
             roleIndex = index;
-            roleid = row.ToUInt32("id");
+            roleid = row.ToInt32("id");
             sex = row.ToByte("sex");
             faceid = row.ToByte("faceid");
             hairid = row.ToByte("hairid");
@@ -86,6 +86,7 @@ namespace JadeDynastySimulator
 
         private bool Initailize(int index, ByteBuffer reader)
         {
+            roleid = -1;
             roleIndex = index;
             sex = reader.ReadByte();
             faceid = reader.ReadByte();
@@ -130,7 +131,7 @@ namespace JadeDynastySimulator
                 if (DataBaseManager.Instance.PQuery(dataTable, "select id,mapid,posx,posy,posz from roles where rolename='{0}';", rolename))
                 {
                     var row = new TypedDataRow(dataTable.Rows[0]);
-                    roleid = row.ToUInt32("id");
+                    roleid = row.ToInt32("id");
                     mapid = row.ToUInt32("id");
                     posx = row.ToSingle("posx");
                     posh = row.ToSingle("posy");
@@ -156,7 +157,7 @@ namespace JadeDynastySimulator
             packer.WriteUInt32(accountid, false);
             packer.WriteInt32(0);
             packer.WriteByte(1);
-            packer.WriteUInt32(roleid, false);
+            packer.WriteInt32(roleid, false);
             packer.WriteByte(sex);
             packer.WriteByte(faceid);
             packer.WriteByte(hairid);
@@ -213,12 +214,10 @@ namespace JadeDynastySimulator
             if (ok)
                 packer.WriteInt32(0);
             else
-                packer.WriteInt32((int)ServerError.SE_NAMEREPEATED);
-            packer.WriteInt32(roleIndex, false);
+                packer.WriteInt32((int)ServerError.SE_NAMEREPEATED, false);
+            packer.WriteInt32(roleid, false);
             packer.WriteUInt32(accountid, false);
-            packer.WriteInt32(0);
-            packer.WriteByte(1);
-            packer.WriteUInt32(roleid, false);
+            packer.WriteInt32(roleid, false);
             packer.WriteByte(sex);
             packer.WriteByte(faceid);
             packer.WriteByte(hairid);
@@ -231,10 +230,14 @@ namespace JadeDynastySimulator
             packer.Write(name);
             packer.WriteByte(0);
             packer.WriteByte(status);
+            packer.WriteUInt32(UnixTime.ToTimestamp(deleteTime), false);
+            packer.WriteUInt32(UnixTime.ToTimestamp(createTime), false);
+            packer.WriteUInt32(UnixTime.ToTimestamp(lastLoginTime), false);
             packer.WriteSingle(posx, false);
             packer.WriteSingle(posh, false);
             packer.WriteSingle(posy, false);
             packer.WriteUInt32(mapid, false);
+            packer.WriteBoolean(fashionMode);
             packer.WriteBoolean(!fashionMode);
             if (fashionMode)
             {
@@ -268,7 +271,7 @@ namespace JadeDynastySimulator
         }
 
         private int roleIndex;
-        private uint roleid;
+        private int roleid;
         private uint accountid;
         private bool showclassic;
         private byte sex;
@@ -296,7 +299,7 @@ namespace JadeDynastySimulator
             worldSocket.SendPacket(packet);
         }
 
-        public uint GetID()
+        public int GetID()
         {
             return roleid;
         }

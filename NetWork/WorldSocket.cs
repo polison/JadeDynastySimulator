@@ -28,7 +28,7 @@ namespace JadeDynastySimulator
 
         private RC4 s2cEncrypt, c2sEncrypt;
         private MPPC compressor;
-        private Dictionary<uint, Player> accountPlayers;
+        private Dictionary<int, Player> accountPlayers;
 
         public WorldSocket(Type packetType, Socket linkSocket, WorldSocketManager socketManager)
             : base(packetType, linkSocket, socketManager)
@@ -36,7 +36,7 @@ namespace JadeDynastySimulator
             accountId = -1;
             compressor = new MPPC();
             dataTable = new DataTable();
-            accountPlayers = new Dictionary<uint, Player>();
+            accountPlayers = new Dictionary<int, Player>();
         }
 
         protected override void Initialize()
