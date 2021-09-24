@@ -7,20 +7,25 @@ using System.Threading.Tasks;
 
 namespace JadeDynastySimulator
 {
-    class WorldPacketClass : WorldPacket
+    class WorldPacket : BaseWorldPacket
     {
-        public byte ID;
+        private readonly byte id;
 
-        public WorldPacketClass(ByteBuffer byteBuffer)
-            :base(byteBuffer)
+        public WorldPacket(ByteBuffer byteBuffer)
+            : base(byteBuffer)
         {
+        }
 
+        public WorldPacket(byte _id, ByteBuffer byteBuffer)
+            : base(byteBuffer)
+        {
+            id = _id;
         }
 
         public override byte[] Pack()
         {
             ByteBuffer buffer = new ByteBuffer();
-            buffer.Write(ID);
+            buffer.WriteByte(id);
             WriteLength(buffer);
             buffer.Write(ByteBuffer.GetBytes());
             return buffer.GetBytes();
@@ -29,9 +34,9 @@ namespace JadeDynastySimulator
         private void WriteLength(ByteBuffer buffer)
         {
             var length = ByteBuffer.GetLength();
-            buffer.Write((byte)length);
             if (length > 0x7f)
-                buffer.Write((byte)((length >> 8 & 0x7F) | 0x80));
+                buffer.WriteByte((byte)((length >> 8 & 0x7F) | 0x80));
+            buffer.WriteByte((byte)(length & 0xFF));
         }
 
         public override int ReadPacketID()
