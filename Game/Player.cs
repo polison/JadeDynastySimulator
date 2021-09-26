@@ -270,6 +270,12 @@ namespace JadeDynastySimulator
             packer.WriteInt32(0);
         }
 
+        internal void SetStatus(byte sts)
+        {
+            status = sts;
+            DataBaseManager.Instance.PExecute("update roles set status={0} where id={1};", status, roleid);
+        }
+
         private int roleIndex;
         private int roleid;
         private uint accountid;

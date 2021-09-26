@@ -45,6 +45,8 @@ namespace JadeDynastySimulator
             RegisterHandler((int)SocketOpcode.CMSG_LOGIN, HandleLogin);
             RegisterHandler((int)SocketOpcode.CMSG_ROLELIST, HandleCharacterEnum);
             RegisterHandler((int)SocketOpcode.CMSG_CREATEROLE, HandleCharacterCreate);
+            RegisterHandler((int)SocketOpcode.CMSG_DELETEROLE, HandleCharacterDelete);
+            RegisterHandler((int)SocketOpcode.CMSG_REGAINROLE, HandleCharacterRestore);
             RegisterHandler((int)SocketOpcode.SCMSG_PING, HandlePing);
 
             SendLink();
@@ -203,6 +205,48 @@ namespace JadeDynastySimulator
             Player player = Player.CreatePlayer(this, reader);
             if (player != null)
                 accountPlayers.Add(player.GetID(), player);
+        }
+
+        private void HandleCharacterDelete(byte[] packetData)
+        {
+            var reader = new ByteBuffer(packetData);
+            var roleId = reader.ReadInt32(false);
+            var sid = reader.ReadInt32(false);
+            var packer = new ByteBuffer();
+            if (accountPlayers.ContainsKey(roleId))
+            {
+                packer.WriteInt32(0);
+                accountPlayers[roleId].SetStatus(0x03);
+            }
+            else
+            {
+                packer.WriteInt32((int)ServerError.SE_DELETEFAIL);
+            }
+            packer.WriteInt32(roleId, false);
+            packer.WriteInt32(sid, false);
+            var delete = new WorldPacket((int)SocketOpcode.SMSG_DELETEROLE, packer);
+            SendPacket(delete);
+        }
+
+        private void HandleCharacterRestore(byte[] packetData)
+        {
+            var reader = new ByteBuffer(packetData);
+            var roleId = reader.ReadInt32(false);
+            var sid = reader.ReadInt32(false);
+            var packer = new ByteBuffer();
+            if (accountPlayers.ContainsKey(roleId))
+            {
+                packer.WriteInt32(0);
+                accountPlayers[roleId].SetStatus(0x01);
+            }
+            else
+            {
+                packer.WriteInt32((int)ServerError.SE_DELETEFAIL);
+            }
+            packer.WriteInt32(roleId, false);
+            packer.WriteInt32(sid, false);
+            var restore = new WorldPacket((int)SocketOpcode.SMSG_REGAINROLE, packer);
+            SendPacket(restore);
         }
 
         private void HandlePing(byte[] packetData)
