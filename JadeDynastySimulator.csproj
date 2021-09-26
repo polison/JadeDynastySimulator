@@ -10,7 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NetWorkLibrary\NetWorkLibrary.csproj" />
+    <Reference Include="NetWorkLibrary">
+      <HintPath>NetWorkLibrary.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
   </ItemGroup>
 
 </Project>

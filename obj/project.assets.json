@@ -275,16 +275,6 @@
             "rid": "win"
           }
         }
-      },
-      "NetWorkLibrary/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/NetWorkLibrary.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/NetWorkLibrary.dll": {}
-        }
       }
     }
   },
@@ -841,55 +831,45 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "NetWorkLibrary/1.0.0": {
-      "type": "project",
-      "path": "../NetWorkLibrary/NetWorkLibrary.csproj",
-      "msbuildProject": "../NetWorkLibrary/NetWorkLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "MySql.Data >= 8.0.26",
-      "NetWorkLibrary >= 1.0.0"
+      "MySql.Data >= 8.0.26"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
-    "D:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "X:\\Users\\Administrator\\.nuget\\packages\\": {},
+    "C:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\VusialStudio\\JadeDynastySimulator\\JadeDynastySimulator.csproj",
+      "projectUniqueName": "E:\\Projects\\VSProjects\\JadeDynastySimulator\\JadeDynastySimulator.csproj",
       "projectName": "JadeDynastySimulator",
-      "projectPath": "D:\\Projects\\VusialStudio\\JadeDynastySimulator\\JadeDynastySimulator.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\VusialStudio\\JadeDynastySimulator\\obj\\",
+      "projectPath": "E:\\Projects\\VSProjects\\JadeDynastySimulator\\JadeDynastySimulator.csproj",
+      "packagesPath": "X:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "E:\\Projects\\VSProjects\\JadeDynastySimulator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "X:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "x:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "x:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "X:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {
-            "D:\\Projects\\VusialStudio\\NetWorkLibrary\\NetWorkLibrary.csproj": {
-              "projectPath": "D:\\Projects\\VusialStudio\\NetWorkLibrary\\NetWorkLibrary.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -922,7 +902,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "X:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

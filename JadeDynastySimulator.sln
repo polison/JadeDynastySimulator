@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JadeDynastySimulator", "JadeDynastySimulator.csproj", "{CE2FEE95-4C03-4E8D-8400-C37FA948C425}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetWorkLibrary", "..\NetWorkLibrary\NetWorkLibrary.csproj", "{95FBF406-FCA4-43C9-9DC2-E45181D9A534}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{CE2FEE95-4C03-4E8D-8400-C37FA948C425}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE2FEE95-4C03-4E8D-8400-C37FA948C425}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE2FEE95-4C03-4E8D-8400-C37FA948C425}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95FBF406-FCA4-43C9-9DC2-E45181D9A534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95FBF406-FCA4-43C9-9DC2-E45181D9A534}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95FBF406-FCA4-43C9-9DC2-E45181D9A534}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95FBF406-FCA4-43C9-9DC2-E45181D9A534}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
