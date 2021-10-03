@@ -73,7 +73,7 @@ namespace JadeDynastySimulator
                 }
 
                 connection = new MySqlConnection();
-                connection.ConnectionString = $"server={sqlHost};port={sqlPort};user={sqlUser};password={sqlPass};database={sqlDbname};sslmode=none;";
+                connection.ConnectionString = $"server={sqlHost};port={sqlPort};user={sqlUser};password={sqlPass};database={sqlDbname};sslmode=Preferred;";
                 connection.Open();
 
                 logger.Message("数据库{0}@{1}已成功连接！", sqlUser, sqlHost);
